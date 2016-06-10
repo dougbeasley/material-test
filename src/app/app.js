@@ -37,9 +37,51 @@
 
   });
 
-  app.controller('DataController', function() {
+  app.controller('DataController', ['$scope', '$timeout', function($scope, $timeout) {
 
-  });
+    $scope.stuff = [
+	{
+		color: "red",
+		value: "#f00"
+	},
+	{
+		color: "green",
+		value: "#0f0"
+	},
+	{
+		color: "blue",
+		value: "#00f"
+	},
+	{
+		color: "cyan",
+		value: "#0ff"
+	},
+	{
+		color: "magenta",
+		value: "#f0f"
+	},
+	{
+		color: "yellow",
+		value: "#ff0"
+	},
+	{
+		color: "black",
+		value: "#000"
+	}
+]
+
+
+    $scope.selected = [];
+
+
+      function success(stuff) {
+        $scope.stuff = stuff;
+      }
+
+      $scope.getDesserts = function () {
+        $scope.promise = $timeone(function() { return stuff; }).$promise;//nutrition.desserts.get($scope.query, success).$promise;
+      };
+  }]);
 
 
 })();

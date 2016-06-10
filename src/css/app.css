@@ -10,6 +10,10 @@
   border-top: none;
 }
 
+.app-menu-btn {
+  font-size: 1.5em;
+}
+
 ul li:first-child {
   margin-top: 0;
 }

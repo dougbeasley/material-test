@@ -1,0 +1,65 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="bower_components//angular-material/angular-material.css">
+  <link rel="stylesheet" href="src/css/app.css">
+</head>
+<body ng-app="app" layout="row" ng-controller="AppController" ng-cloak>
+
+  <md-sidenav class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-md')"
+        md-disable-backdrop
+        md-whiteframe="4">
+        <header>
+          <a ng-href="/" class="app-logo" href="/">
+            <img src="src/assets/images/chem.png" alt="" data-pin-nopin="true" width="100px">
+            <h1 class="app-logotype md-heading">Tracking</h1>
+          </a>
+        </header>
+        <md-content flex role="navigation">
+          <ul class="app-menu">
+            <li>
+              <menu-link section="one">
+                <a class="md-button md-ink-ripple" href="#">One</a>
+              </menu-link>
+            </li>
+            <li>
+              <menu-link section="two">
+                <a class="md-button md-ink-ripple" href="#">Two</a>
+              </menu-link>
+            </li>
+          </ul>
+        </md-content>
+  </md-sidenav>
+  <div layout="column" flex role="main">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+      <button class="md-icon-button md-button md-ink-ripple hide-gt-sm" ng-click="toggleNav()"><div>&#9776;</div></button>
+      <div layout="row" flex>
+        <h2 class="md-headline">Tracking System</h2>
+      </div>
+    </div>
+    </md-toolbar>
+    <md-content flex layout-padding>
+      <h1>Hello World!</h1>
+
+    </mdcontent>
+  </div>
+
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="bower_components//angular/angular.js"></script>
+  <script src="bower_components//angular-animate/angular-animate.js"></script>
+  <script src="bower_components//angular-aria/angular-aria.js"></script>
+  <script src="bower_components//angular-messages/angular-messages.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="bower_components//angular-material/angular-material.js"></script>
+
+  <!-- Your application bootstrap  -->
+  <script src="src/app/app.js"></script>
+
+</body>
+</html>

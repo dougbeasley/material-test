@@ -1,5 +1,6 @@
 <html lang="en" >
 <head>
+  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Angular Material style sheet -->
   <link rel="stylesheet" href="bower_components//angular-material/angular-material.css">
@@ -24,12 +25,12 @@
           <ul class="app-menu">
             <li>
               <menu-link section="one">
-                <a class="md-button md-ink-ripple" href="#one">One</a>
+                <a class="md-button md-ink-ripple" ng-click="setFocus()" href="one">One</a>
               </menu-link>
             </li>
             <li>
               <menu-link section="two">
-                <a class="md-button md-ink-ripple" href="#two">Two</a>
+                <a class="md-button md-ink-ripple" ng-click="setFocus()" href="two">Two</a>
               </menu-link>
             </li>
           </ul>
@@ -45,8 +46,9 @@
     </div>
     </md-toolbar>
     <md-content flex layout-padding>
-      <h1>Hello World!</h1>
-
+      <div ng-view>
+        <h1>Hello World!</h1>
+      </div>
     </mdcontent>
   </div>
 
@@ -56,9 +58,11 @@
   <script src="bower_components//angular-animate/angular-animate.js"></script>
   <script src="bower_components//angular-aria/angular-aria.js"></script>
   <script src="bower_components//angular-messages/angular-messages.js"></script>
+  <script src="bower_components//angular-route/angular-route.js"></script>
 
   <!-- Angular Material Library -->
   <script src="bower_components//angular-material/angular-material.js"></script>
+  <script type="text/javascript" src="bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
 
   <!-- Your application bootstrap  -->
   <script src="src/app/app.js"></script>

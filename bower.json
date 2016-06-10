@@ -21,6 +21,7 @@
     "angular-aria": "^1.5.6",
     "angular-messages": "^1.5.6",
     "angular-material": "^1.0.9",
-    "angular-material-data-table": "^0.10.9"
+    "angular-material-data-table": "^0.10.9",
+    "angular-route": "^1.5.6"
   }
 }

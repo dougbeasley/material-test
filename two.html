@@ -27,7 +27,7 @@
     <tbody md-body>
       <tr md-row md-select="item" md-select-id="color" md-auto-select ng-repeat="item in stuff">
         <td md-cell>{{item.color}}</td>
-        <td md-cell>{{item.value}}</td>
+        <td md-cell ng-click="editComment($event, item)">{{item.value}}</td>
       </tr>
     </tbody>
   </table>

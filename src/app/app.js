@@ -44,7 +44,7 @@
 
   });
 
-  app.controller('DataController', ['$scope', '$timeout', '$mdEditDialog', function($scope, $timeout, $mdEditDialog) {
+  app.controller('DataController', ['$scope', '$timeout', '$mdEditDialog', '$mdDialog', function($scope, $timeout, $mdEditDialog, $mdDialog) {
 
     $scope.stuff = [
       {
@@ -75,7 +75,18 @@
         color: "black",
         value: "#000"
       }
-    ]
+    ];
+
+    $scope.addColor = function(event) {
+      $mdDialog.show({  clickOutsideToClose: true,
+        controller: 'addColorController',
+        controllerAs: 'ctrl',
+        focusOnOpen: false,
+        targetEvent: event,
+        templateUrl: 'add-color-dialog.html',
+      }).then($scope.getStuff);
+    };
+
 
     $scope.editComment = function (event, item) {
       // if auto selection is enabled you will want to stop the event
@@ -121,7 +132,7 @@
     }
 
     $scope.getStuff = function () {
-      $scope.promise = $timeone(function() { return stuff; }).$promise;//nutrition.desserts.get($scope.query, success).$promise;
+      $scope.promise = $timeout(function() { return $scope.stuff; }).$promise;
     };
 
     $scope.loadStuff = function () {

@@ -1,9 +1,24 @@
-<h1>Two</h2>
+<h1>Datatable Sample</h2>
 
+  <md-toolbar class="md-table-toolbar md-default" ng-hide="options.rowSelection && selected.length">
+    <div class="md-toolbar-tools">
+      <span>Colors</span>
+      <div flex></div>
+      <md-button class="md-icon-button" ng-click="loadStuff()">
+        <md-icon>refresh</md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <md-toolbar class="md-table-toolbar alternate" ng-show="selected.length">
+    <div class="md-toolbar-tools">
+      <span>{{selected.length}} {{selected.length > 1 ? 'items' : 'item'}} selected</span>
+    </div>
+  </md-toolbar>
 
   <md-table-container>
   <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
-    <thead md-head md-on-reorder="getDesserts">
+    <thead md-head md-on-reorder="getStuff">
       <tr md-row>
         <th md-column md-numeric>Color</th>
         <th md-column md-numeric>Value</th>

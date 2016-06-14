@@ -6,6 +6,11 @@
   var app = angular.module('app', ['ngMaterial','ngRoute','md.data.table']);
 
 
+app.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('blue-grey');
+});
+
   app.config(function($routeProvider, $locationProvider) {
     $routeProvider
     .when('/one', {
